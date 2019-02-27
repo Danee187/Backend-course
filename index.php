@@ -1,13 +1,3 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-<body>
 
 <?php
 
@@ -21,38 +11,20 @@
         "Júliska" => 19
     ];
 
-    echo $string." ".$szam."<br/><br/>";
-    print_r($tomb);
+    $person = [
+        "name" => "Dani",
+        "age" => 25,
+        "gendre" => "férfi"
+    ];
 
-    echo "<br/><br/>";
 
-    foreach ($uj_tomb as $ertek) {
-        echo $ertek."<br/>";
-    }
+    include "functions.php";
+    include "index.view.php";
 
-    echo "<table border='1'>";
-    foreach ($badass_tomb as $nev => $ev) {
+    //require "index.view.php"; // máshiba kezelése van , ha hiba van megakad a kód
 
-        echo "<tr>";
-        echo "<td>".$nev."</td>";
-        echo "<td>".$ev."</td>";
-        echo "</tr>";
 
-    }
-
-    echo "</table>";
-    echo "<br/><br/>";
-
-    echo $_SERVER['HTTP_HOST'];
-    echo "<br/><br/>";
-    echo $_GET["name"];
-
-    echo "<br/><br/>";
 ?>
 
-<?= "Még egy példa szöveg"?>
 
 
-
-</body>
-</html>
