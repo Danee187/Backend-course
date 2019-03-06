@@ -21,7 +21,7 @@
     include "functions.php";
     include "index.view.php";
 
-    //require "index.view.php"; // máshiba kezelése van , ha hiba van megakad a kód
+    //require "index.view.php"; // másmilyen hiba kezelése van , ha hiba van megakad a kód
 
 
 ?>
