@@ -9,14 +9,20 @@
 </head>
 <body>
 
-<h1><?= $string ?></h1>
-<p><?=  $person["age"] === 25 ? "igen" : "nem" ?></p>
+<ul>
+<?php foreach ($tasks as $task): ?>
+    <li>
+       <?php if($task->isComplete()): ?>
+        <strike>
+        <?php endif; ?>
+        <?= $task->description; ?>
 
-<?php if (isOldEnough(20)): ?>
-+
-<?php else: ?>
--
-<?php endif; ?>
+        <?php if($task->isComplete()): ?>
+        </strike>
+        <?php endif; ?>
+    </li>
+<?php endforeach; ?>
+</ul>
 
 </body>
 </html>
