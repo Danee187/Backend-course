@@ -8,17 +8,25 @@ function dd($data) {
     exit;
 }
 
-
-function sum($num1, $num2) {
-    return $num1 + $num2;
-}
-
-
-function isOldEnough($age) {
-    if($age >= 18) {
-        return true;
-    }else{
-        return false;
+function connectToDb()
+{
+    try {
+        return new PDO('mysql:dbname=myapp;host=127.0.0.1', 'root', '');
+    } catch (PDOException $e) {
+        dd('Connection failed: ' . $e->getMessage());
     }
 }
+
+/**
+ * Fetches all tasks from the database, using a PDO object
+ * @param $pdo
+ * @return mixed
+ */
+function fetchAllTasks($pdo)
+{
+    $statement = $pdo->prepare('select * from tasks');
+    $statement->execute();
+    return $statement->fetchAll(PDO::FETCH_CLASS, 'Task');
+}
+
 ?>

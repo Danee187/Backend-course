@@ -4,6 +4,7 @@
     include "functions.php";
     include "task.php";
 
+    /*
     $tasks = [
       new Task("első feladat", "Anett"),
       new Task("második feladat", "Fecó"),
@@ -12,7 +13,12 @@
 
     $tasks[1]->complete();
     $tasks[1]->setAssignee("Béla");
+*/
 
+    $pdo = connectToDb();
+    $tasks = fetchAllTasks($pdo);
+
+    dd($tasks);
     //$task = new Task("leírás");
    // $task->complete();
 

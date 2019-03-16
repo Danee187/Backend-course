@@ -2,15 +2,16 @@
 
 class Task {
 
+    protected $id;
     public $description;
     public $assignee;
-    protected $completed=false;
+    public $completed = false;
 
-    public function __construct($description, $assignee)
+    /*public function __construct($description, $assignee)
     {
         $this->description = $description;
         $this->assignee = $assignee;
-    }
+    }*/
 
     public function complete()
     {
