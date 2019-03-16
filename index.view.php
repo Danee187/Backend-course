@@ -15,7 +15,7 @@
        <?php if($task->isComplete()): ?>
         <strike>
         <?php endif; ?>
-        <?= $task->description; ?>
+        <?= $task->getAssignee()." : ".$task->description; ?>
 
         <?php if($task->isComplete()): ?>
         </strike>
